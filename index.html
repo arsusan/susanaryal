@@ -263,38 +263,6 @@
     padding:5px 11px; border-radius:4px;
   }
 
-  /* ---------- Learning (papers & courses) ---------- */
-  .learning-group{ margin-bottom:34px; }
-  .learning-group:last-child{ margin-bottom:0; }
-  .learning-group-name{
-    font-family:var(--mono); font-size:12px; color:var(--ink-3);
-    text-transform:uppercase; letter-spacing:0.06em; margin-bottom:14px;
-  }
-  .paper-row{
-    display:flex; gap:14px; padding:13px 0; border-bottom:1px solid var(--line);
-  }
-  .paper-row:last-child{ border-bottom:none; }
-  .paper-mark{
-    flex:none; margin-top:5px; width:6px; height:6px; border-radius:50%;
-    background:var(--accent);
-  }
-  .paper-title{ font-weight:600; font-size:15px; }
-  .paper-title a{ color:var(--ink); }
-  .paper-title a:hover{ color:var(--accent); }
-  .paper-meta{ font-family:var(--mono); font-size:12px; color:var(--ink-3); margin-top:2px; }
-  .paper-desc{ color:var(--ink-2); font-size:14px; margin-top:4px; max-width:60ch; }
-
-  .course-item{ display:flex; gap:14px; padding:16px 0; border-bottom:1px solid var(--line); }
-  .course-item:last-child{ border-bottom:none; }
-  .course-check{ flex:none; margin-top:3px; }
-  .course-check svg{ width:16px; height:16px; stroke:var(--accent); }
-  .course-title{ font-weight:600; font-size:15.5px; }
-  .course-title a{ color:var(--ink); }
-  .course-title a:hover{ color:var(--accent); }
-  .course-meta{ font-family:var(--mono); font-size:12px; color:var(--ink-3); margin:2px 0 6px; }
-  .course-desc{ color:var(--ink-2); font-size:14.5px; max-width:60ch; }
-  .course-desc a{ font-family:var(--mono); font-size:13px; }
-
   /* ---------- Credentials ---------- */
   .edu-line{
     font-size:15.5px; color:var(--ink-2); margin-bottom:36px; max-width:64ch;
@@ -348,7 +316,6 @@
       <a href="#about">About</a>
       <a href="#projects">Projects</a>
       <a href="#skills">Skills</a>
-      <a href="#learning">Learning</a>
       <a href="#credentials">Credentials</a>
       <a href="resume.pdf" class="nav-cta">Résumé</a>
     </nav>
@@ -388,20 +355,20 @@
 
         <div class="diagram-wrap">
           <div class="diagram-card">
-            <svg class="pipeline" viewBox="0 0 380 250" width="100%" style="max-width:400px;display:block;margin:0 auto" role="img" aria-label="Node graph of an agent pipeline: three mismatched data sources flow through extract, reconcile and evaluate nodes, with a retry loop back to reconcile, into a verified output">
+            <svg class="pipeline" viewBox="0 0 380 250" width="100%" style="max-width:400px;display:block;margin:0 auto" role="img" aria-label="Node graph of an AI engineering workflow: raw data, requirements and feedback flow through process, build and evaluate nodes, with a retry loop back to build, into a shipped and verified system">
 
               <!-- source nodes -->
               <g class="pg-node-g n1">
                 <rect class="pg-src" x="0" y="8"   width="104" height="26" rx="4"/>
-                <text x="10" y="25" class="pg-src-label">PDF datasheet</text>
+                <text x="10" y="25" class="pg-src-label">Your data</text>
               </g>
               <g class="pg-node-g n1">
                 <rect class="pg-src" x="0" y="76"  width="104" height="26" rx="4"/>
-                <text x="10" y="93" class="pg-src-label">Order form</text>
+                <text x="10" y="93" class="pg-src-label">Your goal</text>
               </g>
               <g class="pg-node-g n1">
                 <rect class="pg-src" x="0" y="144" width="104" height="26" rx="4"/>
-                <text x="10" y="161" class="pg-src-label">Call notes</text>
+                <text x="10" y="161" class="pg-src-label">Constraints</text>
               </g>
 
               <!-- edges: sources -> extract -->
@@ -409,21 +376,21 @@
               <path class="pg-edge d1" d="M104 89 C 130 89, 130 60, 150 60" />
               <path class="pg-edge d2" d="M104 157 C 130 157, 130 75, 150 75" />
 
-              <!-- extract node -->
+              <!-- process node -->
               <g class="pg-node-g n2">
                 <rect class="pg-node" x="150" y="32" width="92" height="42" rx="5"/>
-                <text x="196" y="49" text-anchor="middle" class="pg-node-label">Extract</text>
-                <text x="196" y="63" text-anchor="middle" class="pg-node-sub">structured fields</text>
+                <text x="196" y="49" text-anchor="middle" class="pg-node-label">Understand</text>
+                <text x="196" y="63" text-anchor="middle" class="pg-node-sub">clean &amp; structure</text>
               </g>
 
               <!-- edge: extract -> reconcile -->
               <path class="pg-edge d3" d="M196 74 V 108" />
 
-              <!-- reconcile node -->
+              <!-- build node -->
               <g class="pg-node-g n3">
                 <rect class="pg-node" x="150" y="108" width="92" height="42" rx="5"/>
-                <text x="196" y="125" text-anchor="middle" class="pg-node-label">Reconcile</text>
-                <text x="196" y="139" text-anchor="middle" class="pg-node-sub">flag conflicts</text>
+                <text x="196" y="125" text-anchor="middle" class="pg-node-label">Build</text>
+                <text x="196" y="139" text-anchor="middle" class="pg-node-sub">model or agent</text>
               </g>
 
               <!-- edge: reconcile -> evaluate -->
@@ -433,12 +400,12 @@
               <g class="pg-node-g out">
                 <rect class="pg-node" x="286" y="78" width="94" height="42" rx="5"/>
                 <text x="333" y="95" text-anchor="middle" class="pg-node-label">Evaluate</text>
-                <text x="333" y="109" text-anchor="middle" class="pg-node-sub">score confidence</text>
+                <text x="333" y="109" text-anchor="middle" class="pg-node-sub">test &amp; validate</text>
               </g>
 
               <!-- retry loop: evaluate -> reconcile -->
               <path class="pg-edge retry" d="M286 108 C 264 150, 264 165, 242 152" marker-end="url(#pg-arrow)" />
-              <text x="220" y="182" class="pg-legend">retry if low confidence</text>
+              <text x="220" y="182" class="pg-legend">iterate until it works</text>
 
               <!-- edge: evaluate -> output -->
               <path class="pg-edge d5" d="M333 120 V 150" />
@@ -446,8 +413,8 @@
               <!-- output node -->
               <g class="pg-node-g out">
                 <rect x="286" y="150" width="94" height="46" rx="5" fill="var(--panel)" stroke="var(--verified)" stroke-width="1.4"/>
-                <text x="296" y="169" class="pg-node-label">Verified</text>
-                <text x="296" y="183" class="pg-conf">confidence 0.94</text>
+                <text x="296" y="169" class="pg-node-label">Shipped</text>
+                <text x="296" y="183" class="pg-conf">tested &amp; working</text>
                 <path class="pg-check" d="M362 160 l4 4 l8 -10" />
               </g>
 
@@ -458,7 +425,7 @@
               </defs>
             </svg>
           </div>
-          <div class="diagram-caption">A LangGraph-style agent that extracts, reconciles and evaluates its own output before it's trusted — the pattern behind <a href="#compliance-agent">the project below</a>.</div>
+          <div class="diagram-caption">This is how I work: understand the data and the goal, build the model or agent, test it against reality, and iterate until it's ready to ship. See it applied in <a href="#projects">the projects below</a>.</div>
         </div>
       </div>
     </div>
@@ -473,15 +440,9 @@
       <div class="status-list">
         <div class="status-row">
           <span class="status-dot" aria-hidden="true"></span>
-          <span class="status-label">AI Engineer</span>
-          <span class="status-when">Aug 2026 — now</span>
-          <span class="status-detail">Building &amp; evaluating LLM agent systems and ML models; independent research</span>
-        </div>
-        <div class="status-row">
-          <span class="status-dot" aria-hidden="true"></span>
           <span class="status-label">AI Engineer Trainee — Leroy AI</span>
           <span class="status-when">Aug 2026 — now</span>
-          <span class="status-detail">Training position (not employment) · LangChain, LangGraph, RAG, deep learning, AI app development</span>
+          <span class="status-detail">LangChain, LangGraph, RAG &amp; deep learning · building agent pipelines and ML models alongside independent research</span>
         </div>
         <div class="status-row">
           <span class="status-dot past" aria-hidden="true"></span>
@@ -559,98 +520,6 @@
         <div class="skill-group-name">Tools &amp; Infra</div>
         <div class="chip-row">
           <span class="chip">FastAPI</span><span class="chip">Docker</span><span class="chip">Git</span><span class="chip">Linux</span><span class="chip">Jupyter Notebook</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ LEARNING: PAPERS & COURSES ============ -->
-  <section id="learning">
-    <div class="wrap reveal">
-      <div class="section-head"><h2>Papers &amp; Continued Learning</h2><div class="rule"></div></div>
-
-      <div class="learning-group">
-        <div class="learning-group-name">Research papers</div>
-
-        <div class="paper-row">
-          <span class="paper-mark" aria-hidden="true"></span>
-          <div>
-            <div class="paper-title"><a href="https://arxiv.org/abs/1706.03762" target="_blank" rel="noopener">Attention Is All You Need</a> — Vaswani et al., 2017</div>
-            <div class="paper-desc">The paper that introduced the Transformer architecture — the backbone behind almost every modern LLM, including the agent systems I build with LangGraph.</div>
-          </div>
-        </div>
-
-        <div class="paper-row">
-          <span class="paper-mark" aria-hidden="true"></span>
-          <div>
-            <div class="paper-title"><a href="https://arxiv.org/abs/1810.04805" target="_blank" rel="noopener">BERT: Pre-training of Deep Bidirectional Transformers</a> — Devlin et al., 2018</div>
-            <div class="paper-desc">How masked-language-model pretraining produces representations that transfer across NLP tasks.</div>
-          </div>
-        </div>
-
-        <div class="paper-row">
-          <span class="paper-mark" aria-hidden="true"></span>
-          <div>
-            <div class="paper-title"><a href="https://arxiv.org/abs/2005.14165" target="_blank" rel="noopener">Language Models are Few-Shot Learners (GPT-3)</a> — Brown et al., 2020</div>
-            <div class="paper-desc">Scaling laws and in-context / few-shot learning — the ideas underpinning most of today's prompting and agent-evaluation work.</div>
-          </div>
-        </div>
-
-        <div class="paper-row">
-          <span class="paper-mark" aria-hidden="true"></span>
-          <div>
-            <div class="paper-title"><a href="https://arxiv.org/abs/1512.03385" target="_blank" rel="noopener">Deep Residual Learning for Image Recognition (ResNet)</a> — He et al., 2015</div>
-            <div class="paper-desc">Residual connections and why very deep CNNs became trainable — background reading behind the MRI tumor-detection project above.</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="learning-group">
-        <div class="learning-group-name">Courses &amp; self-study</div>
-
-        <div class="course-item">
-          <span class="course-check"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><path d="M4 12l5 5L20 6"/></svg></span>
-          <div>
-            <div class="course-title"><a href="https://huggingface.co/learn/llm-course/chapter1/1" target="_blank" rel="noopener">Hugging Face LLM Course</a></div>
-            <div class="course-meta">Hugging Face · free</div>
-            <div class="course-desc">Transformers, tokenizers, datasets, fine-tuning and deploying LLMs across the Hugging Face ecosystem — the practical counterpart to the Transformer paper above.</div>
-          </div>
-        </div>
-
-        <div class="course-item">
-          <span class="course-check"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><path d="M4 12l5 5L20 6"/></svg></span>
-          <div>
-            <div class="course-title"><a href="https://huggingface.co/learn/agents-course/unit0/introduction" target="_blank" rel="noopener">Hugging Face Agents Course</a></div>
-            <div class="course-meta">Hugging Face · free</div>
-            <div class="course-desc">Building multi-step reasoning and tool-using agents — directly relevant to the LangGraph agent pipeline work above.</div>
-          </div>
-        </div>
-
-        <div class="course-item">
-          <span class="course-check"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><path d="M4 12l5 5L20 6"/></svg></span>
-          <div>
-            <div class="course-title"><a href="https://www.coursera.org/specializations/machine-learning-introduction" target="_blank" rel="noopener">Machine Learning Specialization</a></div>
-            <div class="course-meta">DeepLearning.AI &amp; Stanford Online · Andrew Ng · free to audit</div>
-            <div class="course-desc">Supervised learning, neural networks, and unsupervised/recommender methods — the foundational ML sequence behind everything above.</div>
-          </div>
-        </div>
-
-        <div class="course-item">
-          <span class="course-check"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><path d="M4 12l5 5L20 6"/></svg></span>
-          <div>
-            <div class="course-title"><a href="https://www.kaggle.com/learn" target="_blank" rel="noopener">Kaggle Learn — Python, Pandas &amp; Intro to Machine Learning</a></div>
-            <div class="course-meta">Kaggle · free, micro-courses</div>
-            <div class="course-desc">Hands-on Python and ML micro-courses used to sharpen the data-wrangling and modeling side of AI engineering.</div>
-          </div>
-        </div>
-
-        <div class="course-item">
-          <span class="course-check"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><path d="M4 12l5 5L20 6"/></svg></span>
-          <div>
-            <div class="course-title">The Data Analyst Course: Complete Data Analyst Bootcamp</div>
-            <div class="course-meta">Alex The Analyst</div>
-            <div class="course-desc">Excel, SQL, Python, Tableau and portfolio-project fundamentals for data analysis — groundwork for the sales dashboard project above.</div>
-          </div>
         </div>
       </div>
     </div>
