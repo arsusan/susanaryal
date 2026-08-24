@@ -3,269 +3,645 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Susan Aryal</title>
+<title>Susan Aryal — AI Engineer</title>
+<meta name="description" content="Susan Aryal — AI engineer building and evaluating ML models and LLM agent systems. Kathmandu, Nepal.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
 <style>
-  * {
-    box-sizing: border-box;
-  }
-  body {
-    font-family: -apple-system, Segoe UI, Helvetica, Arial, sans-serif;
-    max-width: 760px;
-    margin: 0 auto;
-    padding: 50px 24px 70px 24px;
-    color: #222;
-    line-height: 1.6;
-  }
-  header {
-    margin-bottom: 44px;
-  }
-  h1 {
-    font-size: 30px;
-    margin: 0 0 6px 0;
-  }
-  .subtitle {
-    color: #555;
-    font-size: 15px;
-    margin: 0 0 14px 0;
-  }
-  .links a {
-    color: #222;
-    text-decoration: none;
-    border-bottom: 1px solid #999;
-    margin-right: 16px;
-    font-size: 14px;
-  }
-  .links a:hover {
-    border-bottom-color: #222;
-  }
-  h2 {
-    font-size: 18px;
-    border-bottom: 1px solid #ddd;
-    padding-bottom: 6px;
-    margin-top: 46px;
-    margin-bottom: 20px;
-  }
-  /* Projects */
-  .project {
-    margin-bottom: 28px;
-  }
-  .project h3 {
-    font-size: 16px;
-    margin: 0 0 4px 0;
-  }
-  .project .stack {
-    font-size: 13px;
-    color: #777;
-    margin: 0 0 8px 0;
-  }
-  .project p {
-    margin: 4px 0;
-    font-size: 15px;
-  }
-  .project a {
-    font-size: 14px;
-    color: #222;
-  }
-  /* Skills */
-  .skill-group {
-    margin-bottom: 16px;
-  }
-  .skill-group .label {
-    font-size: 13px;
-    color: #777;
-    margin: 0 0 8px 0;
-  }
-  .tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-  }
-  .tag {
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    padding: 4px 10px;
-    font-size: 13px;
-    color: #333;
-    white-space: nowrap;
-  }
-  /* Certifications */
-  .cert {
-    margin-bottom: 16px;
-  }
-  .cert h3 {
-    font-size: 15px;
-    margin: 0 0 2px 0;
-  }
-  .cert .meta {
-    font-size: 13px;
-    color: #777;
-    margin: 0 0 4px 0;
-  }
-  .cert a {
-    font-size: 13px;
-    color: #222;
-  }
-  footer {
-    margin-top: 60px;
-    font-size: 13px;
-    color: #888;
+  :root{
+    --paper:   #F6F6F2;
+    --panel:   #FFFFFF;
+    --ink:     #14151A;
+    --ink-2:   #4B4E55;
+    --ink-3:   #82858C;
+    --line:    #E1E1DB;
+    --accent:  #2F4B8F;
+    --accent-2:#1F3568;
+    --verified:#2E7D5B;
+    --flag:    #B5762A;
+
+    --serif-display: 'Space Grotesk', sans-serif;
+    --sans: 'IBM Plex Sans', sans-serif;
+    --mono: 'IBM Plex Mono', monospace;
+
+    --maxw: 760px;
   }
 
-  /* Responsive adjustments */
-  @media (max-width: 600px) {
-    body {
-      padding: 32px 18px 50px 18px;
-    }
-    h1 {
-      font-size: 25px;
-    }
-    h2 {
-      font-size: 16px;
-      margin-top: 36px;
-    }
-    .links a {
-      display: inline-block;
-      margin-bottom: 8px;
-    }
-    .tag {
-      font-size: 12px;
-      padding: 4px 8px;
-    }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:var(--sans);
+    font-size:16px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  ::selection{ background:var(--accent); color:#fff; }
+
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ color:var(--accent-2); text-decoration:underline; text-underline-offset:3px; }
+  a:focus-visible, button:focus-visible{
+    outline:none;
+    box-shadow:0 0 0 3px rgba(47,75,143,0.35);
+    border-radius:2px;
+  }
+
+  h1,h2,h3{ font-family:var(--serif-display); font-weight:600; margin:0; color:var(--ink); }
+
+  .eyebrow{
+    font-family:var(--mono);
+    font-size:12px;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    color:var(--ink-3);
+  }
+
+  .wrap{ max-width:var(--maxw); margin:0 auto; padding:0 24px; }
+  .wrap-wide{ max-width:1040px; margin:0 auto; padding:0 24px; }
+
+  /* ---------- Background texture ---------- */
+  .grid-bg{
+    position:fixed; inset:0; z-index:-1; pointer-events:none;
+    background-image:
+      linear-gradient(rgba(20,21,26,0.035) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(20,21,26,0.035) 1px, transparent 1px);
+    background-size:34px 34px;
+    mask-image:linear-gradient(to bottom, black, black 30%, transparent 92%);
+  }
+
+  /* ---------- Nav ---------- */
+  header.nav{
+    position:sticky; top:0; z-index:20;
+    background:rgba(246,246,242,0.86);
+    backdrop-filter:blur(6px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-inner{
+    max-width:1040px; margin:0 auto; padding:16px 24px;
+    display:flex; align-items:center; justify-content:space-between;
+  }
+  .nav-mark{
+    font-family:var(--mono); font-weight:500; font-size:14px;
+    letter-spacing:0.04em; color:var(--ink);
+  }
+  .nav-mark span{ color:var(--accent); }
+  .nav-links{ display:flex; gap:28px; align-items:center; }
+  .nav-links a{
+    color:var(--ink-2); font-size:14px; font-family:var(--mono);
+  }
+  .nav-links a:hover{ color:var(--accent); }
+  .nav-cta{
+    border:1px solid var(--ink); padding:7px 14px; border-radius:3px;
+    color:var(--ink) !important; font-size:13px !important;
+  }
+  .nav-cta:hover{
+    background:var(--ink); color:var(--paper) !important; text-decoration:none;
+  }
+  @media (max-width:640px){
+    .nav-links a:not(.nav-cta){ display:none; }
+  }
+
+  /* ---------- Hero ---------- */
+  section#hero{ padding:72px 0 64px; }
+  .hero-grid{
+    display:grid; grid-template-columns:1.05fr 1.1fr; gap:56px; align-items:center;
+  }
+  .hero-title{ font-size:52px; line-height:1.05; margin:14px 0 18px; }
+  .hero-tagline{ font-size:19px; color:var(--ink-2); max-width:46ch; margin-bottom:6px; }
+  .hero-sub{ font-family:var(--mono); font-size:13px; color:var(--ink-3); margin-bottom:28px; }
+
+  .hero-links{ display:flex; flex-wrap:wrap; gap:10px 18px; align-items:center; }
+  .hero-links a{
+    font-family:var(--mono); font-size:13.5px; color:var(--ink-2);
+    display:inline-flex; align-items:center; gap:6px;
+  }
+  .hero-links a:hover{ color:var(--accent); }
+  .hero-links svg{ width:15px; height:15px; flex:none; }
+  .btn-primary{
+    font-family:var(--mono) !important; font-size:13.5px !important;
+    background:var(--ink); color:var(--paper) !important; padding:9px 16px;
+    border-radius:3px; display:inline-flex; align-items:center; gap:6px;
+  }
+  .btn-primary:hover{ background:var(--accent-2); text-decoration:none !important; }
+
+  /* --- pipeline / node graph diagram --- */
+  .diagram-wrap{ display:flex; flex-direction:column; align-items:center; }
+  .diagram-card{
+    width:100%; background:var(--panel); border:1px solid var(--line);
+    border-radius:8px; padding:18px 14px 10px;
+  }
+  .diagram-caption{
+    font-family:var(--mono); font-size:11.5px; color:var(--ink-3);
+    margin-top:12px; text-align:center; max-width:340px;
+  }
+  .diagram-caption a{ font-size:11.5px; }
+  svg.pipeline text{ font-family:var(--mono); }
+  .pg-src-label{ font-size:10px; fill:var(--ink-2); }
+  .pg-node-label{ font-size:11px; fill:var(--ink); font-weight:500; }
+  .pg-node-sub{ font-size:9px; fill:var(--ink-3); }
+  .pg-conf{ font-size:9.5px; fill:var(--verified); }
+  .pg-legend{ font-size:9.5px; fill:var(--ink-3); }
+
+  .pg-edge{
+    fill:none; stroke:var(--ink-3); stroke-width:1.1;
+    stroke-dasharray:340; stroke-dashoffset:340;
+    animation:pg-draw 1s ease forwards;
+  }
+  .pg-edge.d1{ animation-delay:0.05s; }
+  .pg-edge.d2{ animation-delay:0.15s; }
+  .pg-edge.d3{ animation-delay:0.25s; }
+  .pg-edge.d4{ animation-delay:0.55s; }
+  .pg-edge.d5{ animation-delay:0.85s; }
+  .pg-edge.d6{ animation-delay:1.15s; }
+  .pg-edge.d7{ animation-delay:1.4s; }
+  .pg-edge.retry{
+    stroke:var(--flag); stroke-dasharray:6 5;
+    animation:pg-draw 1s ease forwards, pg-flow 1.6s linear infinite;
+    animation-delay:1.6s, 2.6s;
+  }
+  @keyframes pg-flow{ to{ stroke-dashoffset:-22; } }
+
+  .pg-src{ fill:var(--panel); stroke:#D8D9D3; stroke-width:1; }
+  .pg-node{
+    fill:var(--panel); stroke:var(--ink-3); stroke-width:1.1;
+    opacity:0; transform:translateY(4px); transform-box:fill-box; transform-origin:center;
+    animation:pg-pop 0.45s ease forwards;
+  }
+  .pg-node.n1{ animation-delay:0.4s; }
+  .pg-node.n2{ animation-delay:0.7s; }
+  .pg-node.n3{ animation-delay:1.0s; }
+  .pg-node.out{
+    stroke:var(--verified); stroke-width:1.4;
+    animation-delay:1.3s;
+  }
+  .pg-node-g{ opacity:0; animation:pg-pop 0.45s ease forwards; }
+  .pg-node-g.n1{ animation-delay:0.4s; }
+  .pg-node-g.n2{ animation-delay:0.7s; }
+  .pg-node-g.n3{ animation-delay:1.0s; }
+  .pg-node-g.out{ animation-delay:1.3s; }
+  @keyframes pg-pop{ to{ opacity:1; transform:translateY(0); } }
+  .pg-check{
+    stroke:var(--verified); stroke-width:2; fill:none;
+    stroke-dasharray:24; stroke-dashoffset:24;
+    animation:pg-draw 0.4s ease forwards;
+    animation-delay:1.6s;
+  }
+  @keyframes pg-draw{ to{ stroke-dashoffset:0; } }
+  @media (prefers-reduced-motion:reduce){
+    .pg-edge, .pg-node-g, .pg-check{ animation:none; stroke-dashoffset:0; opacity:1; transform:none; }
+  }
+
+  @media (max-width:860px){
+    .hero-grid{ grid-template-columns:1fr; gap:36px; }
+    .hero-title{ font-size:40px; }
+  }
+
+  /* ---------- Sections generic ---------- */
+  section{ padding:56px 0; border-top:1px solid var(--line); }
+  section#hero{ border-top:none; }
+  section > .wrap > h2{ font-size:13px; }
+  .section-head{ display:flex; align-items:baseline; gap:14px; margin-bottom:32px; }
+  .section-head h2{
+    font-family:var(--mono); font-size:13px; letter-spacing:0.08em;
+    text-transform:uppercase; color:var(--ink-3); font-weight:500;
+  }
+  .section-head .rule{ flex:1; height:1px; background:var(--line); }
+
+  /* ---------- About ---------- */
+  #about p{ font-size:17px; color:var(--ink-2); max-width:62ch; }
+  .status-list{ margin-top:28px; display:flex; flex-direction:column; gap:0; border-top:1px solid var(--line); }
+  .status-row{
+    display:flex; gap:16px; align-items:baseline; padding:13px 0;
+    border-bottom:1px solid var(--line); font-size:14.5px;
+  }
+  .status-dot{
+    width:7px; height:7px; border-radius:50%; background:var(--verified);
+    flex:none; margin-top:6px;
+  }
+  .status-dot.past{ background:var(--ink-3); }
+  .status-label{ font-weight:600; min-width:220px; }
+  .status-when{ font-family:var(--mono); font-size:12px; color:var(--ink-3); min-width:130px; }
+  .status-detail{ color:var(--ink-2); }
+  @media (max-width:640px){
+    .status-row{ flex-wrap:wrap; }
+    .status-when{ order:3; min-width:0; }
+  }
+
+  /* ---------- Projects ---------- */
+  .project{ padding:30px 0; border-bottom:1px solid var(--line); }
+  .project:first-of-type{ padding-top:0; }
+  .project:last-of-type{ border-bottom:none; }
+  .project-meta{
+    font-family:var(--mono); font-size:11.5px; letter-spacing:0.05em;
+    text-transform:uppercase; color:var(--ink-3); margin-bottom:10px;
+  }
+  .project-meta .tag{
+    display:inline-block; padding:2px 8px; border:1px solid var(--line);
+    border-radius:20px; margin-right:8px; color:var(--ink-2);
+  }
+  .project h3{ font-size:22px; margin-bottom:10px; }
+  .project p{ color:var(--ink-2); max-width:66ch; margin-bottom:12px; font-size:15.5px; }
+  .project-link{ font-family:var(--mono); font-size:13.5px; }
+
+  /* ---------- Skills ---------- */
+  .skill-group{ margin-bottom:22px; }
+  .skill-group:last-child{ margin-bottom:0; }
+  .skill-group-name{
+    font-family:var(--mono); font-size:12px; color:var(--ink-3);
+    text-transform:uppercase; letter-spacing:0.06em; margin-bottom:10px;
+  }
+  .chip-row{ display:flex; flex-wrap:wrap; gap:8px; }
+  .chip{
+    font-family:var(--mono); font-size:13px; color:var(--ink-2);
+    border:1px solid var(--line); background:var(--panel);
+    padding:5px 11px; border-radius:4px;
+  }
+
+  /* ---------- Credentials ---------- */
+  .edu-line{
+    font-size:15.5px; color:var(--ink-2); margin-bottom:36px; max-width:64ch;
+  }
+  .edu-line strong{ color:var(--ink); }
+  .edu-line .coursework{
+    display:block; margin-top:8px; font-family:var(--mono); font-size:12px; color:var(--ink-3);
+  }
+
+  .cred-item{ display:flex; gap:14px; padding:16px 0; border-bottom:1px solid var(--line); }
+  .cred-item:last-child{ border-bottom:none; }
+  .cred-check{ flex:none; margin-top:3px; }
+  .cred-check svg{ width:16px; height:16px; stroke:var(--verified); }
+  .cred-title{ font-weight:600; font-size:15.5px; }
+  .cred-meta{ font-family:var(--mono); font-size:12px; color:var(--ink-3); margin:2px 0 6px; }
+  .cred-desc{ color:var(--ink-2); font-size:14.5px; max-width:60ch; }
+  .cred-desc a{ font-family:var(--mono); font-size:13px; }
+
+  /* ---------- Contact ---------- */
+  #contact{ padding-bottom:40px; }
+  .contact-grid{ display:flex; flex-wrap:wrap; gap:28px 40px; margin-top:8px; }
+  .contact-item{ display:flex; align-items:center; gap:10px; }
+  .contact-item svg{ width:17px; height:17px; stroke:var(--ink-2); flex:none; }
+  .contact-item a, .contact-item span{ font-family:var(--mono); font-size:14.5px; color:var(--ink-2); }
+  .contact-item a:hover{ color:var(--accent); }
+
+  footer{
+    border-top:1px solid var(--line); padding:26px 0 40px;
+  }
+  footer .wrap{
+    display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px;
+  }
+  footer p{ font-family:var(--mono); font-size:12px; color:var(--ink-3); margin:0; }
+
+  /* ---------- reveal on scroll ---------- */
+  .reveal{ opacity:0; transform:translateY(14px); transition:opacity 0.55s ease, transform 0.55s ease; }
+  .reveal.in{ opacity:1; transform:translateY(0); }
+  @media (prefers-reduced-motion:reduce){
+    .reveal{ opacity:1; transform:none; transition:none; }
   }
 </style>
 </head>
 <body>
 
-<header>
-  <h1>Susan Aryal</h1>
-  <p class="subtitle">AI Engineer &mdash; Machine Learning, Computer Vision, LLM Agent Systems</p>
-  <p class="links">
-    <a href="mailto:susanaryal089@gmail.com">Email</a>
-    <a href="https://github.com/arsusan" target="_blank">GitHub</a>
-    <a href="https://www.linkedin.com/in/susan-aryal-4665681b8/" target="_blank">LinkedIn</a>
-  </p>
+<div class="grid-bg" aria-hidden="true"></div>
+
+<header class="nav">
+  <div class="nav-inner">
+    <div class="nav-mark">SUSAN<span>·</span>ARYAL</div>
+    <nav class="nav-links">
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#credentials">Credentials</a>
+      <a href="resume.pdf" class="nav-cta">Résumé</a>
+    </nav>
+  </div>
 </header>
 
-<section>
-  <h2>Projects</h2>
+<main>
 
-  <div class="project">
-    <h3>SunBridge Compliance Draft Generator &mdash; AI Agent Pipeline</h3>
-    <p class="stack">Python, LangGraph, LangChain, Google Gemini, Pydantic, pdfplumber</p>
-    <p>Autonomous LangGraph-based agent pipeline that extracts and cross-verifies product/compliance
-       data from mismatched sources (PDF datasheet, order form, call notes), using a structured-output
-       schema to capture per-field confidence and source attribution, with deterministic reconciliation
-       logic to flag conflicts and gaps.</p>
-    <a href="https://github.com/arsusan/sunbridge-bd-compliance.git" target="_blank">View on GitHub &rarr;</a>
-  </div>
+  <!-- ============ HERO ============ -->
+  <section id="hero">
+    <div class="wrap-wide">
+      <div class="hero-grid">
+        <div>
+          <div class="eyebrow">AI Engineer · Kathmandu, Nepal</div>
+          <h1 class="hero-title">Susan Aryal</h1>
+          <p class="hero-tagline">I build and evaluate ML models and LLM agent systems — turning messy, contradictory data into pipelines that a model, or a person, can actually trust.</p>
+          <p class="hero-sub">Machine learning · computer vision · LLM agents · evaluation &amp; research</p>
+          <div class="hero-links">
+            <a href="resume.pdf" class="btn-primary">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0l-4-4m4 4l4-4M4 21h16"/></svg>
+              Download résumé
+            </a>
+            <a href="mailto:susanaryal089@gmail.com">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4z"/><path d="M4 6l8 6 8-6"/></svg>
+              Email
+            </a>
+            <a href="https://github.com/arsusan" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.5 2 2 6.6 2 12.2c0 4.5 2.9 8.3 6.9 9.6.5.1.7-.2.7-.5v-1.9c-2.8.6-3.4-1.4-3.4-1.4-.5-1.1-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 .1 1.5 1 1.5 1 .9 1.5 2.3 1.1 2.9.8.1-.7.4-1.1.6-1.4-2.2-.3-4.6-1.1-4.6-4.9 0-1.1.4-2 1-2.6-.1-.3-.5-1.4.1-2.8 0 0 .8-.3 2.7 1a9.4 9.4 0 0 1 5 0c1.9-1.3 2.7-1 2.7-1 .6 1.4.2 2.5.1 2.8.6.6 1 1.5 1 2.6 0 3.8-2.4 4.6-4.6 4.9.4.3.7.9.7 1.9v2.8c0 .3.2.6.7.5A10 10 0 0 0 22 12.2C22 6.6 17.5 2 12 2z"/></svg>
+              GitHub
+            </a>
+            <a href="https://www.linkedin.com/in/susan-aryal-4665681b8/" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3V9zm7 0h3.8v1.7h.05c.53-.95 1.83-1.95 3.77-1.95 4.03 0 4.78 2.5 4.78 5.76V21h-4v-5.6c0-1.34-.02-3.06-1.87-3.06-1.88 0-2.16 1.44-2.16 2.96V21h-4V9z"/></svg>
+              LinkedIn
+            </a>
+          </div>
+        </div>
 
-  <div class="project">
-    <h3>Tumor Detection from MRI Images</h3>
-    <p class="stack">Python, TensorFlow/Keras, OpenCV, NumPy, Pandas</p>
-    <p>CNN-based models for tumor classification from MRI scans. Preprocessed medical image datasets,
-       trained and evaluated models, and deployed on a local VM to test inference API endpoints.</p>
-    <a href="https://brain-tumor-detection-system.vercel.app/" target="_blank">View project &rarr;</a>
-  </div>
+        <div class="diagram-wrap">
+          <div class="diagram-card">
+            <svg class="pipeline" viewBox="0 0 380 250" width="100%" style="max-width:400px;display:block;margin:0 auto" role="img" aria-label="Node graph of an agent pipeline: three mismatched data sources flow through extract, reconcile and evaluate nodes, with a retry loop back to reconcile, into a verified output">
 
-  <div class="project">
-    <h3>Automated Data Retrieval &amp; Notification System</h3>
-    <p class="stack">Python, REST APIs, Webhooks, Bash</p>
-    <p>Scripts to fetch API data periodically and trigger alerts via webhooks, with scheduling and
-       monitoring of automated pipelines.</p>
-  </div>
+              <!-- source nodes -->
+              <g class="pg-node-g n1">
+                <rect class="pg-src" x="0" y="8"   width="104" height="26" rx="4"/>
+                <text x="10" y="25" class="pg-src-label">PDF datasheet</text>
+              </g>
+              <g class="pg-node-g n1">
+                <rect class="pg-src" x="0" y="76"  width="104" height="26" rx="4"/>
+                <text x="10" y="93" class="pg-src-label">Order form</text>
+              </g>
+              <g class="pg-node-g n1">
+                <rect class="pg-src" x="0" y="144" width="104" height="26" rx="4"/>
+                <text x="10" y="161" class="pg-src-label">Call notes</text>
+              </g>
 
-  <div class="project">
-    <h3>Sales Performance Analysis Dashboard</h3>
-    <p class="stack">Python, Pandas, NumPy, SQL, Power BI, Matplotlib, Seaborn</p>
-    <p>Analyzed sales data to identify revenue trends, customer behavior, and product performance.
-       Performed data cleaning and exploratory data analysis, and built interactive dashboards to
-       present business insights and KPIs.</p>
-  </div>
+              <!-- edges: sources -> extract -->
+              <path class="pg-edge d1" d="M104 21 C 130 21, 130 45, 150 45" />
+              <path class="pg-edge d1" d="M104 89 C 130 89, 130 60, 150 60" />
+              <path class="pg-edge d2" d="M104 157 C 130 157, 130 75, 150 75" />
 
-</section>
+              <!-- extract node -->
+              <g class="pg-node-g n2">
+                <rect class="pg-node" x="150" y="32" width="92" height="42" rx="5"/>
+                <text x="196" y="49" text-anchor="middle" class="pg-node-label">Extract</text>
+                <text x="196" y="63" text-anchor="middle" class="pg-node-sub">structured fields</text>
+              </g>
 
-<section>
-  <h2>Skills</h2>
+              <!-- edge: extract -> reconcile -->
+              <path class="pg-edge d3" d="M196 74 V 108" />
 
-  <div class="skill-group">
-    <p class="label">Languages</p>
-    <div class="tags">
-      <span class="tag">Python</span>
-      <span class="tag">SQL</span>
-      <span class="tag">Bash</span>
-      <span class="tag">JavaScript</span>
-      <span class="tag">R</span>
+              <!-- reconcile node -->
+              <g class="pg-node-g n3">
+                <rect class="pg-node" x="150" y="108" width="92" height="42" rx="5"/>
+                <text x="196" y="125" text-anchor="middle" class="pg-node-label">Reconcile</text>
+                <text x="196" y="139" text-anchor="middle" class="pg-node-sub">flag conflicts</text>
+              </g>
+
+              <!-- edge: reconcile -> evaluate -->
+              <path class="pg-edge d4" d="M242 129 C 264 129, 264 100, 286 100" />
+
+              <!-- evaluate node -->
+              <g class="pg-node-g out">
+                <rect class="pg-node" x="286" y="78" width="94" height="42" rx="5"/>
+                <text x="333" y="95" text-anchor="middle" class="pg-node-label">Evaluate</text>
+                <text x="333" y="109" text-anchor="middle" class="pg-node-sub">score confidence</text>
+              </g>
+
+              <!-- retry loop: evaluate -> reconcile -->
+              <path class="pg-edge retry" d="M286 108 C 264 150, 264 165, 242 152" marker-end="url(#pg-arrow)" />
+              <text x="220" y="182" class="pg-legend">retry if low confidence</text>
+
+              <!-- edge: evaluate -> output -->
+              <path class="pg-edge d5" d="M333 120 V 150" />
+
+              <!-- output node -->
+              <g class="pg-node-g out">
+                <rect x="286" y="150" width="94" height="46" rx="5" fill="var(--panel)" stroke="var(--verified)" stroke-width="1.4"/>
+                <text x="296" y="169" class="pg-node-label">Verified</text>
+                <text x="296" y="183" class="pg-conf">confidence 0.94</text>
+                <path class="pg-check" d="M362 160 l4 4 l8 -10" />
+              </g>
+
+              <defs>
+                <marker id="pg-arrow" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+                  <path d="M1 1L8 5L1 9" fill="none" stroke="var(--flag)" stroke-width="1.4"/>
+                </marker>
+              </defs>
+            </svg>
+          </div>
+          <div class="diagram-caption">A LangGraph-style agent that extracts, reconciles and evaluates its own output before it's trusted — the pattern behind <a href="#compliance-agent">the project below</a>.</div>
+        </div>
+      </div>
     </div>
-  </div>
+  </section>
 
-  <div class="skill-group">
-    <p class="label">AI / Machine Learning</p>
-    <div class="tags">
-      <span class="tag">TensorFlow/Keras</span>
-      <span class="tag">PyTorch</span>
-      <span class="tag">Scikit-learn</span>
-      <span class="tag">LangChain</span>
-      <span class="tag">LangGraph</span>
-      <span class="tag">RAG</span>
+  <!-- ============ ABOUT ============ -->
+  <section id="about">
+    <div class="wrap reveal">
+      <div class="section-head"><h2>About</h2><div class="rule"></div></div>
+      <p>I'm an AI engineer based in Kathmandu, building and evaluating LLM agent systems and ML models — and digging into what makes them reliable rather than just plausible. I recently graduated with a BIT, and from August 2026 I'm training further as an AI Engineer Trainee at Leroy AI while continuing to build agent pipelines and computer vision models on my own.</p>
+
+      <div class="status-list">
+        <div class="status-row">
+          <span class="status-dot" aria-hidden="true"></span>
+          <span class="status-label">AI Engineer</span>
+          <span class="status-when">Aug 2026 — now</span>
+          <span class="status-detail">Building &amp; evaluating LLM agent systems and ML models; independent research</span>
+        </div>
+        <div class="status-row">
+          <span class="status-dot" aria-hidden="true"></span>
+          <span class="status-label">AI Engineer Trainee — Leroy AI</span>
+          <span class="status-when">Aug 2026 — now</span>
+          <span class="status-detail">Training position (not employment) · LangChain, LangGraph, RAG, deep learning, AI app development</span>
+        </div>
+        <div class="status-row">
+          <span class="status-dot past" aria-hidden="true"></span>
+          <span class="status-label">Data Specialist, CloudFactory (Nepal)</span>
+          <span class="status-when">Dec 2024 — Aug 2026</span>
+          <span class="status-detail">Previous role · annotation, validation &amp; QA for AI/ML training datasets</span>
+        </div>
+        <div class="status-row">
+          <span class="status-dot past" aria-hidden="true"></span>
+          <span class="status-label">BIT, Texas College of Management &amp; IT</span>
+          <span class="status-when">2023 — 2026</span>
+          <span class="status-detail">Graduated · relevant coursework in AI, machine learning &amp; statistics</span>
+        </div>
+      </div>
     </div>
-  </div>
+  </section>
 
-  <div class="skill-group">
-    <p class="label">Data</p>
-    <div class="tags">
-      <span class="tag">Pandas</span>
-      <span class="tag">NumPy</span>
-      <span class="tag">Matplotlib</span>
-      <span class="tag">Seaborn</span>
-      <span class="tag">MySQL</span>
-      <span class="tag">PostgreSQL</span>
-      <span class="tag">MongoDB</span>
+  <!-- ============ PROJECTS ============ -->
+  <section id="projects">
+    <div class="wrap reveal">
+      <div class="section-head"><h2>Projects</h2><div class="rule"></div></div>
+
+      <div class="project" id="compliance-agent">
+        <div class="project-meta"><span class="tag">Agent pipeline</span>LangGraph · LangChain · Google Gemini · Pydantic · pdfplumber</div>
+        <h3>Compliance Draft Generator</h3>
+        <p>An autonomous LangGraph agent that extracts and cross-verifies product and compliance data from mismatched sources — a PDF datasheet, an order form, call notes — using a structured-output schema to capture per-field confidence and source attribution. Deterministic reconciliation logic flags conflicts and gaps instead of guessing past them, and an evaluation node scores confidence before anything is marked verified.</p>
+        <a class="project-link" href="https://github.com/arsusan/sunbridge-bd-compliance.git" target="_blank" rel="noopener">View on GitHub →</a>
+      </div>
+
+      <div class="project">
+        <div class="project-meta"><span class="tag">Computer vision</span>TensorFlow/Keras · OpenCV · NumPy · Pandas</div>
+        <h3>Tumor Detection from MRI Images</h3>
+        <p>CNN-based models for tumor classification from MRI scans. Preprocessed medical image datasets, trained and evaluated models, and deployed on a local VM to test inference API endpoints.</p>
+        <a class="project-link" href="https://brain-tumor-detection-system.vercel.app/" target="_blank" rel="noopener">View project →</a>
+      </div>
+
+      <div class="project">
+        <div class="project-meta"><span class="tag">Automation</span>Python · REST APIs · Webhooks · Bash</div>
+        <h3>Automated Data Retrieval &amp; Notification System</h3>
+        <p>Scripts to fetch API data periodically and trigger alerts via webhooks, with scheduling and monitoring built in around the automated pipeline.</p>
+      </div>
+
+      <div class="project">
+        <div class="project-meta"><span class="tag">Data analytics</span>Pandas · NumPy · SQL · Power BI · Matplotlib · Seaborn</div>
+        <h3>Sales Performance Analysis Dashboard</h3>
+        <p>Analyzed sales data to surface revenue trends, customer behavior, and product performance. Cleaned and explored the data, then built interactive dashboards to present the KPIs that mattered to the business.</p>
+      </div>
     </div>
-  </div>
+  </section>
 
-  <div class="skill-group">
-    <p class="label">Tools &amp; Infra</p>
-    <div class="tags">
-      <span class="tag">FastAPI</span>
-      <span class="tag">Docker</span>
-      <span class="tag">Git</span>
-      <span class="tag">Linux</span>
-      <span class="tag">Jupyter Notebook</span>
+  <!-- ============ SKILLS ============ -->
+  <section id="skills">
+    <div class="wrap reveal">
+      <div class="section-head"><h2>Skills</h2><div class="rule"></div></div>
+
+      <div class="skill-group">
+        <div class="skill-group-name">Languages</div>
+        <div class="chip-row">
+          <span class="chip">Python</span><span class="chip">SQL</span><span class="chip">Bash</span><span class="chip">JavaScript</span><span class="chip">R</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-group-name">AI / Machine Learning</div>
+        <div class="chip-row">
+          <span class="chip">TensorFlow / Keras</span><span class="chip">PyTorch</span><span class="chip">Scikit-learn</span><span class="chip">LangChain</span><span class="chip">LangGraph</span><span class="chip">RAG</span><span class="chip">Model evaluation</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-group-name">Data</div>
+        <div class="chip-row">
+          <span class="chip">Pandas</span><span class="chip">NumPy</span><span class="chip">Matplotlib</span><span class="chip">Seaborn</span><span class="chip">MySQL</span><span class="chip">PostgreSQL</span><span class="chip">MongoDB</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-group-name">Tools &amp; Infra</div>
+        <div class="chip-row">
+          <span class="chip">FastAPI</span><span class="chip">Docker</span><span class="chip">Git</span><span class="chip">Linux</span><span class="chip">Jupyter Notebook</span>
+        </div>
+      </div>
     </div>
-  </div>
+  </section>
 
-</section>
+  <!-- ============ CREDENTIALS ============ -->
+  <section id="credentials">
+    <div class="wrap reveal">
+      <div class="section-head"><h2>Credentials</h2><div class="rule"></div></div>
 
-<section>
-  <h2>Certifications &amp; Training</h2>
+      <div class="edu-line">
+        <strong>Bachelor of Information Technology</strong> — Texas College of Management &amp; IT, 2023 – 2026 · Graduated
+        <span class="coursework">Relevant coursework: AI · Machine Learning · Statistics · Data Structures &amp; Algorithms · DBMS</span>
+      </div>
 
-  <div class="cert">
-    <h3>AI Engineering Bootcamp</h3>
-    <p class="meta">Leroy AI &mdash; 8-Week Intensive Training, 2026</p>
-    <p class="meta">Mathematics for AI, Deep Learning (CNNs), Generative AI, LangChain, LangGraph, RAG, AI Application Development</p>
-  </div>
+      <div class="cred-item">
+        <span class="cred-check"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><path d="M4 12l5 5L20 6"/></svg></span>
+        <div>
+          <div class="cred-title">Python for Data Analysis</div>
+          <div class="cred-meta">Texas College of Management &amp; IT · 2-week intensive · 2024</div>
+          <div class="cred-desc"><a href="https://drive.google.com/file/d/1yK9j51rh4Gk61q0M91ZsHKn3hkoFPIp2/view?usp=drive_link" target="_blank" rel="noopener">View certificate →</a></div>
+        </div>
+      </div>
 
-  <div class="cert">
-    <h3>Python for Data Analysis</h3>
-    <p class="meta">Texas College of Management &amp; IT &mdash; 2-Week Intensive Training, 2024</p>
-    <a href="https://drive.google.com/file/d/1yK9j51rh4Gk61q0M91ZsHKn3hkoFPIp2/view?usp=drive_link" target="_blank">View certificate &rarr;</a>
-  </div>
+      <div class="cred-item">
+        <span class="cred-check"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><path d="M4 12l5 5L20 6"/></svg></span>
+        <div>
+          <div class="cred-title">DevOps Fundamentals &amp; CI/CD</div>
+          <div class="cred-meta">Texas College of Management &amp; IT</div>
+          <div class="cred-desc">Ubuntu server setup, site hosting, CI/CD with Jenkins and Docker.</div>
+        </div>
+      </div>
 
-  <div class="cert">
-    <h3>DevOps Fundamentals &amp; CI/CD</h3>
-    <p class="meta">Texas College of Management &amp; IT &mdash; Ubuntu server setup, site hosting, CI/CD with Jenkins, Docker</p>
-  </div>
+      <div class="cred-item">
+        <span class="cred-check"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><path d="M4 12l5 5L20 6"/></svg></span>
+        <div>
+          <div class="cred-title">Machine Learning Crash Course</div>
+          <div class="cred-meta">Self-paced</div>
+          <div class="cred-desc">Supervised &amp; unsupervised learning, neural networks, model evaluation, core AI concepts.</div>
+        </div>
+      </div>
 
-  <div class="cert">
-    <h3>Machine Learning Crash Course</h3>
-    <p class="meta">Supervised &amp; unsupervised learning, neural networks, model evaluation, core AI concepts</p>
-  </div>
+      <div class="cred-item">
+        <span class="cred-check"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><path d="M4 12l5 5L20 6"/></svg></span>
+        <div>
+          <div class="cred-title">CCNA Routing &amp; Switching</div>
+          <div class="cred-meta">Cisco</div>
+        </div>
+      </div>
 
-</section>
+      <div class="cred-item">
+        <span class="cred-check"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><path d="M4 12l5 5L20 6"/></svg></span>
+        <div>
+          <div class="cred-title">Nobel Fundamentals Program</div>
+          <div class="cred-meta">Nobel</div>
+          <div class="cred-desc">Pitch &amp; presentation, leadership, web development, IT basics, machine learning.</div>
+        </div>
+      </div>
+
+      <div class="cred-item">
+        <span class="cred-check"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><path d="M4 12l5 5L20 6"/></svg></span>
+        <div>
+          <div class="cred-title">National Youth Council Leadership Certification</div>
+          <div class="cred-meta">Texas College of Management &amp; IT</div>
+          <div class="cred-desc">Communication, teamwork, collaboration, and leadership.</div>
+        </div>
+      </div>
+
+      <div class="cred-item">
+        <span class="cred-check"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><path d="M4 12l5 5L20 6"/></svg></span>
+        <div>
+          <div class="cred-title">Intern Facilitation &amp; Coordination Program</div>
+          <div class="cred-meta">Nobel</div>
+          <div class="cred-desc">Facilitated training sessions and onboarding for new interns.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CONTACT ============ -->
+  <section id="contact">
+    <div class="wrap reveal">
+      <div class="section-head"><h2>Get in touch</h2><div class="rule"></div></div>
+      <div class="contact-grid">
+        <div class="contact-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M4 4h16v16H4z"/><path d="M4 6l8 6 8-6"/></svg>
+          <a href="mailto:susanaryal089@gmail.com">susanaryal089@gmail.com</a>
+        </div>
+        <div class="contact-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <span>Kathmandu, Nepal</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
 
 <footer>
-  &copy; Susan Aryal
+  <div class="wrap">
+    <p>© 2026 Susan Aryal</p>
+    <p><a href="resume.pdf">Résumé (PDF)</a></p>
+  </div>
 </footer>
+
+<script>
+  const els = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, { threshold: 0.12 });
+    els.forEach(el => io.observe(el));
+  } else {
+    els.forEach(el => el.classList.add('in'));
+  }
+</script>
 
 </body>
 </html>
