@@ -263,6 +263,38 @@
     padding:5px 11px; border-radius:4px;
   }
 
+  /* ---------- Learning (papers & courses) ---------- */
+  .learning-group{ margin-bottom:34px; }
+  .learning-group:last-child{ margin-bottom:0; }
+  .learning-group-name{
+    font-family:var(--mono); font-size:12px; color:var(--ink-3);
+    text-transform:uppercase; letter-spacing:0.06em; margin-bottom:14px;
+  }
+  .paper-row{
+    display:flex; gap:14px; padding:13px 0; border-bottom:1px solid var(--line);
+  }
+  .paper-row:last-child{ border-bottom:none; }
+  .paper-mark{
+    flex:none; margin-top:5px; width:6px; height:6px; border-radius:50%;
+    background:var(--accent);
+  }
+  .paper-title{ font-weight:600; font-size:15px; }
+  .paper-title a{ color:var(--ink); }
+  .paper-title a:hover{ color:var(--accent); }
+  .paper-meta{ font-family:var(--mono); font-size:12px; color:var(--ink-3); margin-top:2px; }
+  .paper-desc{ color:var(--ink-2); font-size:14px; margin-top:4px; max-width:60ch; }
+
+  .course-item{ display:flex; gap:14px; padding:16px 0; border-bottom:1px solid var(--line); }
+  .course-item:last-child{ border-bottom:none; }
+  .course-check{ flex:none; margin-top:3px; }
+  .course-check svg{ width:16px; height:16px; stroke:var(--accent); }
+  .course-title{ font-weight:600; font-size:15.5px; }
+  .course-title a{ color:var(--ink); }
+  .course-title a:hover{ color:var(--accent); }
+  .course-meta{ font-family:var(--mono); font-size:12px; color:var(--ink-3); margin:2px 0 6px; }
+  .course-desc{ color:var(--ink-2); font-size:14.5px; max-width:60ch; }
+  .course-desc a{ font-family:var(--mono); font-size:13px; }
+
   /* ---------- Credentials ---------- */
   .edu-line{
     font-size:15.5px; color:var(--ink-2); margin-bottom:36px; max-width:64ch;
@@ -316,6 +348,7 @@
       <a href="#about">About</a>
       <a href="#projects">Projects</a>
       <a href="#skills">Skills</a>
+      <a href="#learning">Learning</a>
       <a href="#credentials">Credentials</a>
       <a href="resume.pdf" class="nav-cta">Résumé</a>
     </nav>
@@ -526,6 +559,98 @@
         <div class="skill-group-name">Tools &amp; Infra</div>
         <div class="chip-row">
           <span class="chip">FastAPI</span><span class="chip">Docker</span><span class="chip">Git</span><span class="chip">Linux</span><span class="chip">Jupyter Notebook</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ LEARNING: PAPERS & COURSES ============ -->
+  <section id="learning">
+    <div class="wrap reveal">
+      <div class="section-head"><h2>Papers &amp; Continued Learning</h2><div class="rule"></div></div>
+
+      <div class="learning-group">
+        <div class="learning-group-name">Research papers</div>
+
+        <div class="paper-row">
+          <span class="paper-mark" aria-hidden="true"></span>
+          <div>
+            <div class="paper-title"><a href="https://arxiv.org/abs/1706.03762" target="_blank" rel="noopener">Attention Is All You Need</a> — Vaswani et al., 2017</div>
+            <div class="paper-desc">The paper that introduced the Transformer architecture — the backbone behind almost every modern LLM, including the agent systems I build with LangGraph.</div>
+          </div>
+        </div>
+
+        <div class="paper-row">
+          <span class="paper-mark" aria-hidden="true"></span>
+          <div>
+            <div class="paper-title"><a href="https://arxiv.org/abs/1810.04805" target="_blank" rel="noopener">BERT: Pre-training of Deep Bidirectional Transformers</a> — Devlin et al., 2018</div>
+            <div class="paper-desc">How masked-language-model pretraining produces representations that transfer across NLP tasks.</div>
+          </div>
+        </div>
+
+        <div class="paper-row">
+          <span class="paper-mark" aria-hidden="true"></span>
+          <div>
+            <div class="paper-title"><a href="https://arxiv.org/abs/2005.14165" target="_blank" rel="noopener">Language Models are Few-Shot Learners (GPT-3)</a> — Brown et al., 2020</div>
+            <div class="paper-desc">Scaling laws and in-context / few-shot learning — the ideas underpinning most of today's prompting and agent-evaluation work.</div>
+          </div>
+        </div>
+
+        <div class="paper-row">
+          <span class="paper-mark" aria-hidden="true"></span>
+          <div>
+            <div class="paper-title"><a href="https://arxiv.org/abs/1512.03385" target="_blank" rel="noopener">Deep Residual Learning for Image Recognition (ResNet)</a> — He et al., 2015</div>
+            <div class="paper-desc">Residual connections and why very deep CNNs became trainable — background reading behind the MRI tumor-detection project above.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="learning-group">
+        <div class="learning-group-name">Courses &amp; self-study</div>
+
+        <div class="course-item">
+          <span class="course-check"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><path d="M4 12l5 5L20 6"/></svg></span>
+          <div>
+            <div class="course-title"><a href="https://huggingface.co/learn/llm-course/chapter1/1" target="_blank" rel="noopener">Hugging Face LLM Course</a></div>
+            <div class="course-meta">Hugging Face · free</div>
+            <div class="course-desc">Transformers, tokenizers, datasets, fine-tuning and deploying LLMs across the Hugging Face ecosystem — the practical counterpart to the Transformer paper above.</div>
+          </div>
+        </div>
+
+        <div class="course-item">
+          <span class="course-check"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><path d="M4 12l5 5L20 6"/></svg></span>
+          <div>
+            <div class="course-title"><a href="https://huggingface.co/learn/agents-course/unit0/introduction" target="_blank" rel="noopener">Hugging Face Agents Course</a></div>
+            <div class="course-meta">Hugging Face · free</div>
+            <div class="course-desc">Building multi-step reasoning and tool-using agents — directly relevant to the LangGraph agent pipeline work above.</div>
+          </div>
+        </div>
+
+        <div class="course-item">
+          <span class="course-check"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><path d="M4 12l5 5L20 6"/></svg></span>
+          <div>
+            <div class="course-title"><a href="https://www.coursera.org/specializations/machine-learning-introduction" target="_blank" rel="noopener">Machine Learning Specialization</a></div>
+            <div class="course-meta">DeepLearning.AI &amp; Stanford Online · Andrew Ng · free to audit</div>
+            <div class="course-desc">Supervised learning, neural networks, and unsupervised/recommender methods — the foundational ML sequence behind everything above.</div>
+          </div>
+        </div>
+
+        <div class="course-item">
+          <span class="course-check"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><path d="M4 12l5 5L20 6"/></svg></span>
+          <div>
+            <div class="course-title"><a href="https://www.kaggle.com/learn" target="_blank" rel="noopener">Kaggle Learn — Python, Pandas &amp; Intro to Machine Learning</a></div>
+            <div class="course-meta">Kaggle · free, micro-courses</div>
+            <div class="course-desc">Hands-on Python and ML micro-courses used to sharpen the data-wrangling and modeling side of AI engineering.</div>
+          </div>
+        </div>
+
+        <div class="course-item">
+          <span class="course-check"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><path d="M4 12l5 5L20 6"/></svg></span>
+          <div>
+            <div class="course-title">The Data Analyst Course: Complete Data Analyst Bootcamp</div>
+            <div class="course-meta">Alex The Analyst</div>
+            <div class="course-desc">Excel, SQL, Python, Tableau and portfolio-project fundamentals for data analysis — groundwork for the sales dashboard project above.</div>
+          </div>
         </div>
       </div>
     </div>
